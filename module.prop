@@ -1,0 +1,7 @@
+id=hs-tun
+name=tunontether
+version=v1.0
+versionCode=2024051818
+author=SRSF
+description=enable tun proxy for tether/hotspot.
+updateJson=https://raw.githubusercontent.com/simplerick-simplefun/tunontether/main/tot.json
