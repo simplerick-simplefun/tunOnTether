@@ -6,4 +6,11 @@ module_dir="/data/adb/modules/hs-tun"
 
 scripts_dir="/data/adb/tunontether/scripts"
 
-inotifyd ${scripts_dir}/box.inotify ${module_dir} > /dev/null 2>&1 &
+(
+until [ $(getprop sys.boot_completed) -eq 1 ] ; do
+  sleep 3
+done
+touch ${module_dir}/disable
+)&
+
+inotifyd ${scripts_dir}/tot.inotify ${module_dir} > /dev/null 2>&1 &
